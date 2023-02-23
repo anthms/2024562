@@ -1,0 +1,15 @@
+on:
+  #push:
+  #pull_request:
+  workflow_dispatch:
+
+jobs:
+  job-one:
+    runs-on: ubuntu-20.04
+    steps:
+      - run: touch file.txt
+      - uses: actions/cache@v3
+        with:
+          path: ./file.txt
+          key: ubuntu-key
+          
